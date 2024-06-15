@@ -1,0 +1,3 @@
+﻿  Main.cpp
+Main.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ) в функции main.
+C:\Users\User\source\repos\mafiaTest\x64\Debug\mafiaTest.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
