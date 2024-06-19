@@ -1,8 +1,13 @@
 #include <iostream>
 #include <string>
+#include "game/headers/game.h"
 
 int main()
 {
-    std::cout<<"Hello world\n";
+    Game game;
+    game.init_objects();
+    
+    
 
-}
+
+};
