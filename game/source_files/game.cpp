@@ -46,30 +46,41 @@ void Game::initMenus()
         std::cin>>choice;
         if (choice == 1)
         {
-            int sub_choice;
-           for (int i = 0; i < game_menu.size(); i++) std::cout << game_menu[i];
-            std::cin>>sub_choice;
-            switch (sub_choice)
+             int sub_choice;
+            do
             {
-            case 1:
-                break;
-
-            case 2:
-                break;
-            case 3:
-                for (int i = 0; i < player_list.size(); i++)
+               
+                for (int i = 0; i < game_menu.size(); i++) std::cout << game_menu[i];
+                std::cin>>sub_choice;
+                switch (sub_choice)
                 {
-                    std::cout << "Игрок №" << i + 1 << ": " << player_list[i]->instance_eval.name << std::endl;
+                    case 1:
+                        break;
+
+                    case 2:
+                        for (int i = 0; i < player_list.size(); i++)
+                            {
+                                std::cout << "Игрок №" << i + 1 << ": ";
+                                std::cin >> player_list[i]->instance_eval.name;
+                                std::cout << std::endl;
+                            }
+                        for (int i = 0; i < player_list.size(); i++) std::cout << "Игрок №" << i + 1 << ": " << player_list[i]->instance_eval.name << std::endl;
+                        
+                        break;
+                    case 3:
+                        for (int i = 0; i < player_list.size(); i++) player_list[i]->instance_eval.name = "Player#" + std::to_string(i);
+                        
+                        for (int i = 0; i < player_list.size(); i++) std::cout << "Игрок №" << i + 1 << ": " << player_list[i]->instance_eval.name << std::endl;
+                        break;
+                    case 4:
+                        break;
+                    
+                    default:
+                        std::cout << "\t\t\tНеверный выбор. Попробуйте снова.\n";
+                        break;
                 }
-                
-                break;
-            case 4:
-                break;
+            } while (sub_choice != 4);
             
-            default:
-                std::cout << "\t\t\tНеверный выбор. Попробуйте снова.\n";
-                break;
-            }
         }
         
         /* code */
