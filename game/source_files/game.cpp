@@ -1,5 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <string>
+#include <algorithm>
+#include <random>
+
 #include "../headers/player.h"
 #include "../headers/game.h"
 
@@ -11,6 +15,7 @@ void Game::init_objects()
      
 
 }
+
 void Game::initPlayers()
 {
     for (int i = 0; i < MAX_FIX_PLAYERS; i++)
@@ -55,6 +60,7 @@ void Game::initMenus()
                 switch (sub_choice)
                 {
                     case 1:
+                        gameStart();
                         break;
 
                     case 2:
@@ -85,6 +91,23 @@ void Game::initMenus()
         
         /* code */
     } while (choice != 2);
+    
+    
+}
+
+void Game::gameStart()
+{
+    std::vector<std::string> roles = {"ДОН","МАФИЯ","МАФИЯ","ШЕРИФ","МИРНЫЙ","МИРНЫЙ","МИРНЫЙ","МИРНЫЙ","МИРНЫЙ","МИРНЫЙ"};
+    
+    
+
+    
+
+    std::cout<<"\t\t\tУчастники игры и их роли\n\n";
+    for (int i = 0; i < player_list.size(); i++)
+    {
+       std::cout<<" 1) Игрок №" << i + 1 << " - " << player_list[i]->instance_eval.name << "\tРоль: "<< player_list[i]->instance_eval.role <<std::endl;
+    }
     
     
 }
