@@ -9,7 +9,7 @@ all: $(TARGET)
 
 # Создание бинарного каталога и компиляция проекта
 $(TARGET): $(MAIN_FILE) $(SOURCE_FILES_FOLDER)/*.cpp
-	mkdir -p $(BIN_FOLDER)
+	mkdir -p /$(BIN_FOLDER)
 	g++ $(MAIN_FILE) $(SOURCE_FILES_FOLDER)/*.cpp -o $(TARGET)
 
 # Очистка
